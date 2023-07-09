@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,700;1,600&family=Open+Sans:wght@400;600;700&display=swap");
+
 :root {
   --white: hsl(0, 0%, 97%);
 }
@@ -6,6 +8,8 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: "Open Sans", system-ui, -apple-system, BlinkMacSystemFont,
+    sans-serif;
 }
 
 #game {
@@ -15,20 +19,146 @@
   justify-content: center;
   align-items: center;
   gap: 5vh;
+  width: 100dvw;
+  height: 100dvh;
+}
+
+#game section {
+  width: 100%;
+}
+
+#game-head {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
 }
 
 #board {
+  display: none;
+  transition: all 100ms;
+  justify-content: center;
+}
+
+.board-wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: min(2vh, 2vw);
   width: fit-content;
 }
 
+#start {
+  padding: 1rem;
+  width: fit-content;
+  border-radius: 8px;
+  background-color: peachpuff;
+  font-weight: 700;
+  font-size: 20px;
+  transition: all 100ms;
+  box-shadow: -2px 2px 5px black;
+}
+
+#start:hover {
+  cursor: pointer;
+}
+
+#start:active {
+  scale: 1.1;
+}
+
 .square {
-  border: 1px solid black;
+  background-color: hsl(35, 72%, 80%);
+  border: 2px solid black;
   width: 100px;
   height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 8px;
+  font-size: 60px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.square:hover {
+  background-color: hsla(35, 72%, 70%);
+}
+
+#gameConsole {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+#nametag-container {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nametag {
+  border: 1px solid #333;
+  border-radius: 8px;
+  background-color: #b00;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  width: min(300px, 450px);
+  grid-template-areas: "title" "head" "input";
+}
+
+.nametag-title {
+  grid-area: title;
+  display: flex;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  background-color: #333;
+  border-radius: 8px 8px 0 0;
+}
+
+.nametag-head {
+  grid-area: head;
+  display: flex;
+  font-size: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  color: var(--white);
+  font-weight: 700;
+}
+
+.name-input {
+  all: unset;
+  background-color: var(--white);
+  padding: 1rem;
+  border-radius: 0px 0px 8px 8px;
+  color: red;
+  grid-area: input;
+  text-align: center;
+}
+
+.name-input:active,
+.name-input:focus-within,
+.name-input:hover {
+  cursor: default;
+}
+
+.name-input::placeholder {
+  color: lightgray;
+}
+
+#text {
+  font-weight: 600;
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  background-color: yellow;
+  border: 1px black solid;
 }

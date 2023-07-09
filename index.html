@@ -9,21 +9,48 @@
   </head>
   <body>
     <main id="game">
-      <section id="inputs">
+      <section id="game-head">
+        <p id="text">
+          Hi, players! Enter both your names and click "Start Game" to begin.
+          Good luck!
+        </p>
         <button id="start">Start Game</button>
       </section>
       <section id="board">
-        <div class="square"></div>
-        <div class="square"></div>
-        <div class="square"></div>
-        <div class="square"></div>
-        <div class="square"></div>
-        <div class="square"></div>
-        <div class="square"></div>
-        <div class="square"></div>
-        <div class="square"></div>
+        <div class="board-wrapper">
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+          <div class="square"></div>
+        </div>
       </section>
-      <section id="text"></section>
+      <section id="gameConsole">
+        <div id="nametag-container">
+          <div class="nametag">
+            <div class="nametag-title">Player One</div>
+            <div class="nametag-head">Hi! My name is</div>
+            <input
+              type="text"
+              class="name-input"
+              placeholder="John Smith"
+              id="player-one" />
+          </div>
+          <div class="nametag">
+            <div class="nametag-title">Player Two</div>
+            <div class="nametag-head">Hi! My name is</div>
+            <input
+              type="text"
+              class="name-input"
+              placeholder="John Smith"
+              id="player-two" />
+          </div>
+        </div>
+      </section>
     </main>
   </body>
 </html>
